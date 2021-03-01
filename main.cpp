@@ -1,4 +1,5 @@
 #include "raylib.h"
+#include "background.h"
 
 int main(void)
 {
@@ -6,9 +7,10 @@ int main(void)
 	const int screenHeight = 600;
     
     InitWindow(screenWidth, screenHeight, "Of Warriors And Monsters");
+    Background background("assets/images/backgrounds/1.png");
     
-    Texture2D background = LoadTexture("assets/images/backgrounds/4.png");
-    Vector2 backgroundPosition = {0, 0};
+    background.SetPosition({0, 0});
+    background.SetScale(1.25);
     
     SetTargetFPS(60);
     
@@ -16,7 +18,7 @@ int main(void)
     {
         BeginDrawing();
         ClearBackground(RAYWHITE);
-        DrawTextureEx (background, backgroundPosition, 0, 1.25, RAYWHITE);
+        background.Draw();
         
         EndDrawing();
     }
