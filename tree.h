@@ -10,9 +10,18 @@ using std::string;
 using std::hash;
 using std::vector;
 
+typedef hash<string> Hash;
+
 template <class T> class Tree
 {
     private:
-    hash<string> _name;
-    vector<T> _children; 
+    Hash _name;
+    vector<T> _children;
+    
+    vector<string> Parse(string path);
+        
+    public:
+    void Find(string path);
+    bool Insert(Hash parent, T element);    
+    bool Remove(Hash id);
 };
