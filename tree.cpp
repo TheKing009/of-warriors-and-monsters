@@ -9,13 +9,13 @@ vector <string> Tree<T>::Parse(string path)
     string str = "";
     for (int i = 0;i < length; i++)
     {
-        if (path[i] != '/' || path[i] != "#")
+        if (path[i] != '/' || path[i] != '#')
         {
             str.push_back(path[i]);
         }
         else
         {
-            returnPath[depth].push_back(str);
+            returnPath.push_back(str);
             ++depth;
             str = "";
         }
@@ -27,7 +27,6 @@ vector <string> Tree<T>::Parse(string path)
 template <class T>
 T Tree<T>::Find(string path)
 {
-    vector <string> parsedPath = Parse(path);
     
 }
 
