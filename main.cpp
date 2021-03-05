@@ -1,6 +1,14 @@
 #include "raylib.h"
 #include "background.h"
 
+#include <functional>
+#include <string>
+#include <iostream>
+
+using std::cout;
+using std::hash;
+using std::string;
+
 int main(void)
 {
 	const int screenWidth = 800;
@@ -13,6 +21,10 @@ int main(void)
     background.SetScale(1.25);
     
     SetTargetFPS(60);
+    
+    hash<string> h;
+    hash <string> name;
+    cout << h("Hello") << '\t' << name("hello");
     
     while(!WindowShouldClose())
     {

@@ -21,7 +21,8 @@ template <class T> class Tree
     vector<string> Parse(string path);
         
     public:
-    void Find(string path);
+    T Find(string path);
     bool Insert(Hash parent, T element);    
+    bool Insert(string path, T element);
     bool Remove(Hash id);
 };

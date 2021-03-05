@@ -25,15 +25,22 @@ vector <string> Tree<T>::Parse(string path)
 }
 
 template <class T>
-void Tree<T>::Find(string path)
+T Tree<T>::Find(string path)
 {
     vector <string> parsedPath = Parse(path);
+    
 }
 
 template <class T>
 bool Tree<T>::Insert(Hash parent, T element)
 {
 
+}
+
+template <class T>
+bool Tree <T>::Insert(string parentPath, T element)
+{
+    
 }
 
 template <class T>
