@@ -1,13 +1,19 @@
 #include "raylib.h"
 #include "background.h"
 
+#include "utils.h"
+
 int main(void)
 {
 	const int screenWidth = 800;
 	const int screenHeight = 600;
     
+    SetConfigFlags(FLAG_WINDOW_RESIZABLE | FLAG_VSYNC_HINT);
     InitWindow(screenWidth, screenHeight, "Of Warriors And Monsters");
-    Background background("assets/images/backgrounds/1.png");
+    Background background((char *)"assets/images/backgrounds/1.png");
+    SetWindowMinSize(320, 240);
+    
+    const Vector2 gameScreenSize = {640, 480};
     
     background.SetPosition({0, 0});
     background.SetScale(1.25);

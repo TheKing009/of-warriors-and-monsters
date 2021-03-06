@@ -16,13 +16,17 @@ template <class T> class Tree
 {
     private:
     Hash _name;
-    vector<T> _children;
+    vector<Tree> _children;
     
     vector<string> Parse(string path);
         
     public:
-    T Find(string path);
-    bool Insert(Hash parent, T element);    
-    bool Insert(string path, T element);
-    bool Remove(Hash id);
+    Tree();
+    Tree (const string& id) {this->_name(id);}
+    
+    void AddChild(const string& id);
+    void RemoveChild (const string& id);
+    
+    const Hash& GetId();
+    const vector <Tree> GetChildren();
 };

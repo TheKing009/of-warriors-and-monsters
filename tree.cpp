@@ -1,9 +1,42 @@
 #include "tree.h"
 
 template <class T>
-vector <string> Tree<T>::Parse(string path)
+void Tree<T>::AddChild (const string & id)
 {
-    int length = path.length;
+    this -> _children.push_back(Tree(id));
+}
+
+template <class T>
+void Tree<T>::RemoveChild (const string& id)
+{
+    Hash hashedID;
+    hashedID(id);
+    for (int i = 0; i < this->_children.length(); i++)
+    {
+        if (this -> _children.at(i)._name == hashedID)
+        {
+            this -> _children.erase(this -> _children.begin() + i);
+            break;
+        }
+    }
+}
+
+template <class T>
+const Hash& Tree<T>::GetId()
+{
+    return _name;
+}
+
+template <class T>
+const vector<Tree<T>> Tree<T>::GetChildren()
+{
+    return _children;
+}
+
+
+vector <string> Parse(string path)
+{
+    int length = path.length();
     vector <string> returnPath;
     int depth = 0;
     string str = "";
@@ -22,27 +55,4 @@ vector <string> Tree<T>::Parse(string path)
     }
     
     return returnPath;
-}
-
-template <class T>
-T Tree<T>::Find(string path)
-{
-    
-}
-
-template <class T>
-bool Tree<T>::Insert(Hash parent, T element)
-{
-
-}
-
-template <class T>
-bool Tree <T>::Insert(string parentPath, T element)
-{
-    
-}
-
-template <class T>
-bool Tree<T>::Remove(Hash id)
-{
 }
