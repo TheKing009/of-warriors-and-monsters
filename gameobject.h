@@ -16,7 +16,7 @@ typedef hash<string> Hash;
 class Gameobject
 {
     private:
-    Hash _name;
-    
+    Hash _id;
+    vector <Component> _components;
     public:
 };

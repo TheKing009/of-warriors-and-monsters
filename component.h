@@ -5,10 +5,11 @@
 class Component
 {
     private :
-    
+    const string Name;
     public :
-    void Init();
-    void Update();
-    void Final();
-    void OnCreate();
+    virtual void Init() = 0;
+    virtual void Update() = 0;
+    virtual void Final() = 0;
+    virtual void OnDraw() = 0;
+    virtual void OnCreate() = 0;
 };

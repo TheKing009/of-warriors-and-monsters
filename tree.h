@@ -7,10 +7,7 @@
 #include <vector>
 
 using std::string;
-using std::hash;
 using std::vector;
-
-typedef hash<string> Hash;
 
 template <class T> class Tree
 {
