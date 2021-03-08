@@ -41,7 +41,7 @@ int main(void)
         background.Draw();
         EndTextureMode();
         
-        DrawTexturePro (target.texture, (Rectangle) {0, 0, target.texture.width, -target.texture.height}, (Rectangle){ (GetScreenWidth() - ((float)gameScreenSize.x * scale))*0.5,(GetScreenHeight() - ((float)gameScreenSize.y * scale))*0.5,
+        DrawTexturePro (target.texture, (Rectangle) {0.0, 0.0, target.texture.width, -target.texture.height}, (Rectangle){ (GetScreenWidth() - ((float)gameScreenSize.x * scale))*0.5,(GetScreenHeight() - ((float)gameScreenSize.y * scale))*0.5,
         (float)gameScreenSize.x * scale, (float)gameScreenSize.y * scale }, (Vector2){ 0, 0 }, 0.0f, WHITE);;
         
         EndDrawing();
