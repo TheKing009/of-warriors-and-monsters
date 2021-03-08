@@ -15,18 +15,18 @@ typedef hash<string> Hash;
 template <class T> class Tree
 {
     private:
-    Hash _name;
+    T _value;
     vector<Tree> _children;
     
     vector<string> Parse(string path);
         
     public:
     Tree();
-    Tree (const string& id) {this->_name(id);}
+    Tree (const T& id) {this->value = id;}
     
-    void AddChild(const string& id);
-    void RemoveChild (const string& id);
+    void AddChild(const T& value);
+    void RemoveChild (const T& value);
     
-    const Hash& GetId();
+    const T& GetValue();
     const vector <Tree> GetChildren();
 };

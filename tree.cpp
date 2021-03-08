@@ -1,19 +1,17 @@
 #include "tree.h"
 
 template <class T>
-void Tree<T>::AddChild (const string & id)
+void Tree<T>::AddChild (const T& value)
 {
-    this -> _children.push_back(Tree(id));
+    this -> _children.push_back(Tree(value));
 }
 
 template <class T>
-void Tree<T>::RemoveChild (const string& id)
+void Tree<T>::RemoveChild (const T& value)
 {
-    Hash hashedID;
-    hashedID(id);
     for (int i = 0; i < this->_children.length(); i++)
     {
-        if (this -> _children.at(i)._name == hashedID)
+        if (this -> _children.at(i)._value == value)
         {
             this -> _children.erase(this -> _children.begin() + i);
             break;
@@ -22,9 +20,9 @@ void Tree<T>::RemoveChild (const string& id)
 }
 
 template <class T>
-const Hash& Tree<T>::GetId()
+const T& Tree<T>::GetValue()
 {
-    return _name;
+    return _value;
 }
 
 template <class T>
